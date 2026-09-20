@@ -23,6 +23,13 @@ CHUNK_OVERLAP = 100
 # whole three-day itinerary (it returned one day and missed the others).
 RETRIEVAL_K = 10
 
+# Similarity search always returns k results, however poor the match. For a question the knowledge
+# base does not cover (e.g. a currency conversion) that means ten weak chunks spread across every
+# document, which the UI then lists as "sources used" -- making the citations meaningless. Chunks
+# that genuinely answer a question score ~0.53-0.64; unrelated ones peak around 0.45, so anything
+# below this floor is dropped and a question with no relevant content retrieves nothing at all.
+RETRIEVAL_MIN_RELEVANCE = 0.50
+
 # Ingestion pacing. The free Gemini tier allows 100 embedding requests per minute and the
 # embedder issues one request per chunk, so ingestion adds chunks in batches and waits
 # between them. Raise the batch size / drop the pause if you are on a paid tier.

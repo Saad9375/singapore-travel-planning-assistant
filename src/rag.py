@@ -43,7 +43,8 @@ class TravelRAG:
             embedding_function=embeddings,
             persist_directory=str(config.VECTOR_STORE_DIR),
         )
-        self.retriever = self.vector_store.as_retriever(search_kwargs={"k": config.RETRIEVAL_K})
+        # Retrieval goes through similarity_search_with_relevance_scores in retrieve() rather than
+        # a plain retriever, so weakly-matching chunks can be dropped -- see RETRIEVAL_MIN_RELEVANCE.
         self.llm = ChatGoogleGenerativeAI(
             model=config.LLM_MODEL, google_api_key=config.GOOGLE_API_KEY, temperature=0.2
         )
@@ -52,8 +53,18 @@ class TravelRAG:
         )
 
     def retrieve(self, question: str):
-        """Return raw retrieved chunks (used both standalone and by the combiner)."""
-        return self.retriever.invoke(question)
+        """
+        Return the chunks that actually match the question.
+
+        Similarity search returns k results no matter how poor the match, so a question the
+        knowledge base does not cover still comes back with k weak chunks -- which would then be
+        cited as sources. Anything below RETRIEVAL_MIN_RELEVANCE is discarded, so such a question
+        correctly retrieves nothing and the assistant answers from the tools alone.
+        """
+        scored = self.vector_store.similarity_search_with_relevance_scores(
+            question, k=config.RETRIEVAL_K
+        )
+        return [doc for doc, score in scored if score >= config.RETRIEVAL_MIN_RELEVANCE]
 
     def answer(self, question: str) -> RagResult:
         docs = self.retrieve(question)

@@ -1,5 +1,8 @@
 # AI Travel Planning Assistant -- Singapore
 
+## GitHub Repo
+GitHub Repo Link - https://github.com/Saad9375/singapore-travel-planning-assistant
+
 A context-aware travel assistant combining a document-based knowledge base (RAG) with live
 current-information tools (MCP) for weather and currency conversion.
 
@@ -142,6 +145,7 @@ Developed and tested on **Python 3.11**.
 # 1. Create a virtual environment
 python -m venv venv
 source venv/bin/activate        # Windows: venv\Scripts\activate
+(or) .\venv\Scripts\Activate.ps1    # for Windows PowerShell 
 
 # 2. Install dependencies
 pip install -r requirements.txt
