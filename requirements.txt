@@ -1,0 +1,17 @@
+# Gemini 3.x requires thought_signature round-tripping on tool calls, which only
+# langchain-google-genai >= 4 implements. That pulls langchain-core 1.x, which in turn
+# requires langchain-chroma 1.x / chromadb 1.x. langchain-community is intentionally
+# absent: it has no langchain-core 1.x release, and ingest.py no longer needs it.
+langchain-core==1.6.3
+langchain-google-genai==4.4.0
+langchain-text-splitters==1.1.2
+langchain-chroma==1.1.0
+chromadb==1.5.9
+mcp==1.30.0
+langchain-mcp-adapters==0.3.2
+streamlit==1.40.1
+requests==2.32.3
+python-dotenv==1.0.1
+# Verify TLS against the OS certificate store, so the live-API tools still work behind
+# a corporate HTTPS-inspecting proxy whose root CA is not in the certifi bundle.
+truststore==0.10.4

@@ -1,0 +1,53 @@
+# Environment / secrets
+.env
+.env.local
+*.key
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# Python bytecode & caches
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Packaging / build artifacts
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Test & type-check caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Generated vector store (rebuild with the ingest script)
+data/vectorstore/
+
+# Jupyter / IPython
+.ipynb_checkpoints/
+.ipython/
+
+# Streamlit
+.streamlit/secrets.toml
+
+# Editors & IDEs
+.vscode/
+.idea/
+*.swp
+
+# OS cruft
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log

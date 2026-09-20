@@ -1,0 +1,32 @@
+{
+  "attractions_neighbourhoods.md": {
+    "title": "Wikivoyage: Singapore District Guides",
+    "url": "https://en.wikivoyage.org/wiki/Singapore#Districts",
+    "provenance": "Extracted from the nine Wikivoyage Singapore district articles (Marina Bay, Riverside, Chinatown, Little India, Bugis, Orchard, Sentosa, East Coast, North and West), retrieved 2026-09-20.",
+    "license": "CC BY-SA 4.0"
+  },
+  "transportation.md": {
+    "title": "Wikivoyage: Getting Around Singapore",
+    "url": "https://en.wikivoyage.org/wiki/Singapore#Get_around",
+    "provenance": "Extracted from the Get around section of the Wikivoyage Singapore article, retrieved 2026-09-20.",
+    "license": "CC BY-SA 4.0"
+  },
+  "food_experiences.md": {
+    "title": "Wikivoyage: Singapore Food & Local Experiences",
+    "url": "https://en.wikivoyage.org/wiki/Singapore#Eat",
+    "provenance": "Extracted from the Eat section of the Wikivoyage Singapore article (venue listings omitted), retrieved 2026-09-20.",
+    "license": "CC BY-SA 4.0"
+  },
+  "itineraries.md": {
+    "title": "Wikivoyage: Three Days in Singapore",
+    "url": "https://en.wikivoyage.org/wiki/Three_days_in_Singapore",
+    "provenance": "Extracted from the Wikivoyage 'Three days in Singapore' itinerary article, retrieved 2026-09-20.",
+    "license": "CC BY-SA 4.0"
+  },
+  "culture_practical_tips.md": {
+    "title": "Wikivoyage: Singapore Practical Travel Information",
+    "url": "https://en.wikivoyage.org/wiki/Singapore#Respect",
+    "provenance": "Extracted from the Talk, Stay safe, Stay healthy, Respect, Connect and Cope sections of the Wikivoyage Singapore article, retrieved 2026-09-20.",
+    "license": "CC BY-SA 4.0"
+  }
+}
